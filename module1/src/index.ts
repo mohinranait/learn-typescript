@@ -1,0 +1,3 @@
+
+
+let company : (string | number);
