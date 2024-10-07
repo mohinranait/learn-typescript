@@ -127,37 +127,96 @@ displayName("Md. Jhon")
 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Type alias
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# For Single alias
+type UserName = string;
+type Role = boolean;
+const fullName : UserName = "Md. Jhon";
+const isAdmin : Role = false;
+
+
+# Object alias
+type Student = {
+    name : string;
+    age: number;
+    id: number | string;
+    phone?: string;
+    address: string;
+    isMarried: boolean;
+}
+
+const student1 : Student = {
+    name : "Md. Jhon",
+    age: 24,
+    id: '84554569654',
+    phone: '012487454',
+    address: "Dhaka",
+    isMarried: false,
+}
+const student2 : Student = {
+    name : "Md. Lolon",
+    age: 20,
+    id: 89755654,
+    address: "BD",
+    isMarried: true,
+}
+
+
+# Function alias
+# Function 1 | follow previous function
+type TN = number;
+let addFunction1 = ( num1: TN , num2: TN ): TN => {
+    return num1 + num2;
+}
+
+# Function 2
+let addFunction2 = ( num1: TN , num2: TN ): void => {
+    let total : TN =  num1 + num2;
+    console.log(total)
+}
+
+
+
+# Finally FUNCTION Alias
+type TNumFunc = (num1: number, num2: number) => number;
+let add : TNumFunc = ( num1, num2 ) => {
+    return num1 + num2;
+}
+
+# Function 2
+let sub : TNumFunc = ( num1 , num2 ) => {
+    return  num1 - num2;
+}
+
+
+
+type FrontendDeveloepr = {
+    skils: string[];
+    designation1: 'Frontend Developer';
+}
+
+type BackendDeveloper = {
+    skils: string[];
+    designation2: "Backend Developer";
+}
+
+type FullStackDeveloper = FrontendDeveloepr & BackendDeveloper;
+
+const fullstackDeveloper : FullStackDeveloper = {
+    skils: ["HTML","CSS","EXPRESS"],
+    designation1: "Frontend Developer",
+    designation2: 'Backend Developer',
+}
+
+
+```
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-```
-
+ git clone repo-name
 ```
