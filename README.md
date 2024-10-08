@@ -215,6 +215,100 @@ const fullstackDeveloper : FullStackDeveloper = {
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+### Generics Types
+
+```bash
+ // Generics Types
+type GenericTypes<T>  = Array<T>
+const numbers : GenericTypes<number> = [1,2,3,4]
+const names : GenericTypes<string> = ['x','y','z']
+const troutys : GenericTypes<boolean> = [true, false, true]
+
+type Blog = {
+    title: string;
+    count: number;
+}
+
+const blogs : GenericTypes<Blog>  = [
+    {
+        title: 'A',
+        count: 10
+    },
+    {
+        title: 'B',
+        count: 40,
+    },
+
+]
+
+
+// Tuple Generics type
+type TGenericTupleType<X,Y> = [X,Y]
+const cupple : TGenericTupleType<string, string> = ['X','Y']
+
+
+const userWithId:TGenericTupleType<number, {name:string; age: number}> = [45645, {name:"X",age:45}]
+
+
+```
+
+### Generic with Interface
+
+```bash
+
+
+interface Developer<T, X=null> {
+    name: string;
+    age: number;
+    isMarried: boolean;
+    watch: T;
+    bike: X
+}
+
+interface TPoorDev {brand:string;price:number,lock:boolean}
+const poorDeveloper : Developer<TPoorDev> = {
+    name: "X",
+    age: 45,
+    isMarried: false,
+    watch: {
+        brand: "HP",
+        price: 45,
+        lock: false,
+    },
+}
+
+
+interface TRichType {
+    brand: string;
+    price: number;
+    sleepCapacity: boolean;
+    color: string;
+}
+
+interface TBikeType {
+    brand: string;
+    color: string;
+    capacity: number;
+}
+
+const richDev: Developer<TRichType,TBikeType> = {
+    name: "Y",
+    age: 41,
+    isMarried: true,
+    watch: {
+        brand: "Apple",
+        price:100,
+        sleepCapacity: true,
+        color: 'black',
+    },
+    bike: {
+        brand: "Suzuki",
+        color: 'black',
+        capacity: 3,
+    }
+}
+```
+
 ## Learn More
 
 ```bash
